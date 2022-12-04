@@ -62,6 +62,9 @@
     #proba{
         display: block !important;
     }
+    #nestani{
+        display: none;
+    }
     .nav-links{
         position: absolute;
         right: 0px;
