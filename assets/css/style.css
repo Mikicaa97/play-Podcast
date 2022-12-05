@@ -129,11 +129,21 @@
     padding: 3% 7%;
 }
 
+#dugme:hover{
+  background-color: #337763;
+  border: 1px solid #337763;
+}
+
 #dugme1{
     background-color: #2b5a4c;
     border: 1px solid #2b5a4c;
     border-radius: 10px;
     padding: 2% 30%;
+}
+
+#dugme1:hover{
+  background-color: #337763;
+  border: 1px solid #337763;
 }
 
 #proba{
@@ -145,17 +155,7 @@
 
 
 
-
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/* body {
-  background-color:#e9ebee;
-} */
-
+/* Facebook kartica */
 .f-card {
   background-color:white;
   /*height:400px;*/
@@ -311,7 +311,23 @@
 #scrool{
     overflow-y: scroll;
 }
+/*Kraj Facebook kartica */
 
+
+#fader{
+  position: relative;
+}
+
+#fader #to{
+  display: none;
+  position: absolute;
+  left: 0;
+}
+
+#fader img{
+  width: 210px;
+  height: 200px;
+}
 
 /** footer **/
 .footer {
@@ -484,3 +500,106 @@
   
   /** end footer **/
 
+
+
+/* Episode deo */
+
+#epizode{
+  width: 100%;
+    background-color: rgb(231, 231, 231);
+    border: none;
+}
+
+#epizode .heading{
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+  text-shadow: 0 2rem 1rem #000;
+}
+
+#epizode .podcast-container{
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+
+}
+
+#epizode .podcast-container .box{
+  height: 16rem;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 1rem #757575;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+
+#epizode .podcast-container .box .image{
+  height: 100%;
+  width: 25%;
+}
+
+#epizode .podcast-container .box .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+#epizode .podcast-container .box .podcast{
+  width: 75%;
+}
+
+.podcast p{
+  text-align: center;
+  margin: -0.5%;
+}
+
+.podcast #social-sredina{
+  text-align: center;
+  margin: -1%;
+}
+
+.podcast h5{
+  margin: -1%;
+  font-weight: bold;
+  text-align: center;
+  color: #606060;
+  padding: 0.5%;
+}
+
+/* #social-sredina{
+  text-align: center;
+} */
+
+#epizode .podcast-container .box .podcast audio{
+  width: 100%;
+  outline: none;
+}
+
+#epizode .podcast-container .box .podcast audio::-webkit-media-controls-enclosure{
+  background: none;
+}
+
+@media (max-width: 600px){
+
+  #epizode .podcast-container .box{
+    height: 27rem;
+    width: 90%;
+    flex-flow: column;
+  }
+
+  #epizode .podcast-container .box .image{
+    height: 70%;
+    width: 100%;
+  }
+
+  #epizode .podcast-container .box .podcast{
+    height: 20%;
+    width: 100%;
+  }
+  
+}

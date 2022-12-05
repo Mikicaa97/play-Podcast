@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stav Podcast</title>
+        <title>Stanica Podcast</title>
         <link rel="stylesheet" href="assets/css/style.css" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link rel="icon" href="img/stance.jpg" type="image/x-icon">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
     </head>
     <body>
         <nav id="nav">
@@ -21,7 +22,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Početna</a></li>
-                <li><a href="#">Episodes</a></li>
+                <li><a href="epizode.html">Epizode</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Guest</a></li>
                 <li><a href="#">Store</a></li>
@@ -36,14 +37,16 @@
         </nav>
         <div class="container-fluid pt-5"  id="all">
             <div class="row px-xl-5">
-                <div class="card mb-3" style="max-width: 1100px;" id="all">
+                <div class="card mb-3" id="all">
                     <div class="row g-0">
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h6 class="card-title"><b>POSLEDNJA EPIZODA</b></h6>
-                                <h2 class="card-title"><b>Sezona 2 Recap</b></h2>
+                                <h2 class="card-title"><b>Sezona 1 Recap</b></h2>
                                 <p class="card-text">*ATTENTION FELLOW SHOPPERS* On this episode of Stance Bodega; the Clerks Antonio ( Antonio Soto) & Gio (Giovanni Gonzalez) recap on the season 2. Together they share their favorite moments, events and touch upon the support o...</p>
-                                <button type="button" class="btn btn-success btn-lg" id="dugme"><i class="fa fa-solid fa-play"></i> Pusti epizodu</button>
+                                <a href="epizode.html">
+                                    <button type="button" class="btn btn-success btn-lg" id="dugme"><i class="fa fa-solid fa-play"></i> Pusti epizodu</button>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-3" id="nestani">
@@ -54,7 +57,7 @@
             </div>
         </div>
         <!----Kraj hedera-->
-
+        
         <!-----Slajder deo----->
 
         <!---kraj slajder dela----->
@@ -65,9 +68,10 @@
                     <div class="left">
                         <h5 class="card-title my-3">Nedavne epizode</h5>
                         <div class="card mb-3" style="max-width: 640px;">
-                            <div class="row g-0">
+                            <div class="row g-0" id="fader">
                               <div class="col-md-4">
-                                <img src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
+                                <img id="glenda" src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
+                                <img id="to" src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
                               </div>
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -81,7 +85,7 @@
                           <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
                               <div class="col-md-4">
-                                <img src="img/bodega.jpg" class="img-fluid rounded-start" alt="...">
+                                <img src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
                               </div>
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -95,7 +99,7 @@
                           <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
                               <div class="col-md-4">
-                                <img src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
+                                <img src="img/bodega.jpg" class="img-fluid rounded-start" alt="...">
                               </div>
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -109,7 +113,7 @@
                           <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
                               <div class="col-md-4">
-                                <img src="img/stan.jpg" class="img-fluid rounded-start" alt="...">
+                                <img src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
                               </div>
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -151,7 +155,7 @@
                               <div class="time"><a href="#">2hrs</a> · <i class="fa fa-globe"></i></div>
                             </div>
                             <div class="content">
-                              <p>New Episode! "Season 2 Recap"
+                              <p>New Episode! "Season 1 Recap"
 
                                 *ATTENTION FELLOW SHOPPERS* On this episode of Stance Bodega; the Clerks Antonio ( Antonio Soto) & Gio (Giovanni Gonzalez) recap on the season 2. Together <a href="http://placehold.it/300">http://placehold.it/300</a> See More</p>
                             </div>
@@ -271,9 +275,9 @@
 
 
 
-        <audio controls>
+        <!-- <audio controls>
             <source src="audio/Chase Atlantic - _Church_ (Official Music Video).webm" type="audio/mpeg">
-        </audio>
+        </audio> -->
 
 
         <script src="assets/js/main.js"></script>
