@@ -20,21 +20,46 @@
             <div class="logo">
                 <a href="index.html"><img src="img/play-podcast.png" alt="logo"></a>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="epizode.html">Episodes</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Guest</a></li>
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <div id="burger-meni">
+                <ul  class="nav-links">
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="epizode.html">Epizode</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Guest</a></li>
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
         </nav>
+        <div class="container-fluid pt-5"  id="all">
+            <div class="row px-xl-5">
+                <div class="card mb-3" id="all">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="card-title"><b>POSLEDNJA EPIZODA</b></h6>
+                                <h2 class="card-title"><b>Sezona 1 Recap</b></h2>
+                                <p class="card-text">*ATTENTION FELLOW SHOPPERS* On this episode of Stance Bodega; the Clerks Antonio ( Antonio Soto) & Gio (Giovanni Gonzalez) recap on the season 2. Together they share their favorite moments, events and touch upon the support o...</p>
+                                <a href="epizode.html">
+                                    <button type="button" class="btn btn-success btn-lg" id="dugme"><i class="fa fa-solid fa-play"></i> Pusti epizodu</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="nestani">
+                            <img src="img/stance.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         
         <div class="container-fluid pt-5" id="epizode">
             <div class="heading">Sve sezone</div>
@@ -68,13 +93,12 @@
                         <h5 class="card-title"><b>Sezona 1 StartUp</b></h5>
                         <audio src="audio/Chase Atlantic - _Church_ (Official Music Video).webm" controls></audio>
                         <div class="social" id="social-sredina">
-                            <div class="social-content center-block">
-                                <div class="social-buttons">
-                                  <span><i class="fa fa-thumbs-up"></i>Like</span>
-                                  <span><i class="fa fa-comment"></i>Comment</span>
-                                  <span><i class="fa fa-share"></i>Share</span></div>
-                              </div>
-                            </div>
+                            <div class="social-content center-block"></div>
+                            <div class="social-buttons">
+                              <span><i class="fa fa-thumbs-up"></i>Like</span>
+                              <span><i class="fa fa-comment"></i>Comment</span>
+                              <span><i class="fa fa-share"></i>Share</span></div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -139,12 +163,16 @@
                           </div>
                     </div>
                 </div>
+            </div>
+
+            <div id="ucitaj-sve">
+
             </div>
         
             <div class="heading">
-                <button class="btn btn-dark btn-lg center-block loadMore">Zaprati nas</button>
+                <button id="ucitaj" class="btn btn-dark btn-lg center-block loadMore">Učitaj još</button>
             </div>
-
+            
 
         <!--Footer-->
         <!--FOOTER-->
@@ -233,4 +261,5 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
- <audio src="audio/Chase Atlantic - _Church_ (Official Music Video).webm" controls></audio>
+
+

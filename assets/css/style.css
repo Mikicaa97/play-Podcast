@@ -40,15 +40,19 @@
     display: none;
     cursor: pointer;
 }
-
+ 
 .burger div{
     width: 25px;
     height: 3px;
     background-color: rgb(164, 164, 164);
     margin: 5px;
 }
-
-
+.reference{
+  width: 100% !important;
+}
+.reference-thumb{
+  width: 100% !important;
+}
 @media screen and (max-width: 1024px) {
     .nav-links{
         width: 60%;
@@ -56,6 +60,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .nav-links > li{
+    margin-left: 0px !important;
+  }
+  #burger-meni{
+    display: none;
+  }
     body{
         overflow-x: hidden;
     }
@@ -77,9 +87,6 @@
         width: 50%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
-    }
-    .nav-links li{
-        opacity: 0;
     }
     .burger{
         display: block;
@@ -547,7 +554,16 @@
   width: 100%;
   object-fit: cover;
 }
+.nav-links > li{
+  margin-left: 25px !important;
+}
+#nav{
+  z-index: 999 !important;
+}
 
+#nav > .nav-active #nav > .nav-links{
+  z-index: 999 !important;
+}
 
 #epizode .podcast-container .box .podcast{
   width: 75%;
@@ -586,6 +602,9 @@
 
 @media (max-width: 600px){
 
+  .f-card{
+    width: 100% !important;
+  }
   #epizode .podcast-container .box{
     height: 27rem;
     width: 90%;
