@@ -83,3 +83,35 @@ $(document).ready(function(){
     })
 
 });
+
+
+
+// Dinamicki ispis nav dela
+
+// $(document).ready(function(){
+//     $("#nav").this(function(){
+//         var navPodaci = {
+//             href: ["index.html", "epizode.html", "onama.html", "#", "#", "#", "kontakt.html"],
+//             naziv: ["Početna", "Epizode", "O nama", "Guest", "Store", "Reviews", "Kontakt"],
+//         }
+//         console.log(navPodaci);
+
+//         var html = "";
+//         for(var i = 0; i < navPodaci.length; i++){
+//             html += `
+//             <div class="logo">
+//                 <a href="index.html"><img src="img/play-podcast.png" alt="logo"></a>
+//             </div>
+//             <div id="burger-meni">
+//                 <ul  class="nav-links">
+//                     <li><a href="${navPodaci.href}">${navPodaci.naziv}</a></li>
+//                 </ul>
+//             </div>
+//             <div class="burger">
+//                 <div class="line1"></div>
+//                 <div class="line2"></div>
+//                 <div class="line3"></div>
+//             </div>`
+//         }
+//     })
+// })

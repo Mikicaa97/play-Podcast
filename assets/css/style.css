@@ -12,7 +12,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
 .logo img{
     width: 180px;
     height: 180px;
@@ -21,7 +20,7 @@
 .nav-links{
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    /* width: 100%; */
 }
 
 .nav-links li{
@@ -34,6 +33,16 @@
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+}
+
+.nav-links a:hover{
+  color: #2b5a4c;
+  text-decoration: none;
+  /* width: 50%;
+  background-color: #2b5a4c;
+  padding: 20px 5px;
+  color: #fff;
+  border-radius: 10px; */
 }
 
 .burger{
@@ -522,6 +531,7 @@
   padding: 2rem 0;
   text-align: center;
   text-shadow: 0 2rem 1rem #000;
+  color: rgb(100, 100, 100);
 }
 
 #epizode .podcast-container{
@@ -621,4 +631,13 @@
     width: 100%;
   }
   
+}
+
+
+/* Kontakt deo */
+
+#naslov p{
+  text-align: center;
+  color: rgb(100, 100, 100);
+  font-size: 1rem;
 }
