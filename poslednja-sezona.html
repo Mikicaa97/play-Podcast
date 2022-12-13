@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kontakt | Play Podcast</title>
+        <title>Poslednja sezona | Play Podcast</title>
         <link rel="stylesheet" href="assets/css/style.css" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
@@ -38,51 +38,93 @@
             </div>
         </nav>
 
-        
-        <div class="container-fluid pt-5" id="epizode">
-            <div class="heading">Kontakt</div>
-            
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 mx-auto py-1" id="naslov">
-                        <p>Popuni formular ispod i mi ćemo Vam se javiti.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 mx-auto py-2">
-                        <div class="form-registration">
-                            <div>
-                                <div class="form-group">
-                                    <label for="tbIme">Ime</label>
-                                    <input type="text" id="tbIme" class="form-control">
-                                    <span style="color: red;" id="ime_greska"></span>
+        <div class="container-fluid pt-5" id="all">
+            <div class="row">
+                <div class="col-12" id="proba">
+                    <div class="left">
+                        <p class="card-text"><small class="text-muted">Dec. 13, 2022</small></p>
+                        <h5 class="card-title my-3">Sezona 3 Recap</h5>
+                          <div class="card mb-3" style="max-width: 640px;">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/bodega.jpg" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="podcast">
+                                        <p class="card-text"><small class="text-muted">Play Podcast</small></p>
+                                        <h5 class="card-title"><b>Sezona 3 Recap</b></h5>
+                                        <audio src="audio/Chase Atlantic - _Church_ (Official Music Video).webm" controls></audio>
+                                        <div class="social" id="social-sredina">
+                                            <div class="social-content center-block"></div>
+                                            <div class="social-buttons">
+                                              <span><i class="fa fa-thumbs-up"></i>Like</span>
+                                              <span><i class="fa fa-comment"></i>Comment</span>
+                                              <span><i class="fa fa-share"></i>Share</span>
+                                            </div>
+                                          </div>
+                                    </div>
                                 </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mb-3" style="max-width: 640px;">
+                            <div class="row g-0">
+                              <!-- <div class="col-md-4">
+                                <img src="img/bodega.jpg" class="img-fluid rounded-start" alt="...">
+                              </div> -->
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">*PAŽNJA PRATIOCI*</h5>
+                                  <p class="card-text">U ovoj epizodi Play podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele svoje omiljene trenutke, dogadjaje i dotiču se podrške kupaca (njihovih sledbenika).
+                                    Klerkovi su imali neverovatnu godinu i uz podršku kupaca, još jedna sezona Stance Bodege ne bi bila moguća. Zajedno su iskoristili sva iskustva da donesu još jednu sjajnu sezonu 2023. 
+                                    <br/>
+                                    <br/> 
+                                    <b>Hvala vam svima na kontinuiranoj podršci!</b>
+                                    <br/>
+                                    <br/>
+                                    <b>Za promocije / reklame kontaktirajte nas na:</b>
+                                    info@PlayPodcast.com
+                                    <br/>
+                                    <br/>
+                                    <b>Pogledajte naš sajt još mnogo toga:</b>
+                                    <br/>
+                                    <a href="http://">Link</a>
+                                    </p>
+                                  <p class="card-text"><small class="text-muted">Play Podcast</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="right">
+                        <div class="form-login" id="white">
+                            <div>
+                                <h5 class="card-title">Prijavite se da bi ste dobijali novosti od nas</h5>
                                 <div class="form-group">
                                     <label for="tbEmail">Email</label>
                                     <input type="email" id="tbEmail" class="form-control">
-                                    <span style="color: red;"id="email_greska"></span>
+                                    <span style="color: red;"id="email-error"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tbPassword">Poruka</label>
-                                    <textarea id="tbPoruka" cols="30" rows="5" class="form-control"></textarea>
-                                    <span style="color: red;" id="poruka_greska"></span>
+                                    <label for="tbPassword">Lozinka</label>
+                                    <input type="password" id="tbPassword" class="form-control">
+                                    <span style="color: red;" id="password-error"></span>
                                 </div>
-                                <button type="button" class="btn btn-dark col-lg-12" style="background-color: #337763; border: #337763; padding: 3%; border-radius: 10px;" onclick="kontakt();">Pošalji poruku</button>
+                                <p class="card-text"><small class="text-muted">Prijavljivanjem prihvatate da primate e-poštu od Play podcasta.</small></p>
+                                <button type="button" class="btn btn-success btn-lg" id="dugme1">Zaprati nas</button>
                                 <p style="margin-top: 1rem; font-weight: 700;" id="message-info"></p>
                             </div>
                         </div>
+                        </div> 
                     </div>
                 </div>
             </div>
-        </div>
 
+        
+        <!-- </div> -->
 
-
-
+        
 
         <!--Footer-->
         <!--FOOTER-->
@@ -163,5 +205,3 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
-
-
