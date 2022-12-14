@@ -86,27 +86,24 @@ $(document).ready(function(){
     })
 });
 
-// var html = "";
-// function navL(){
-//     var linkovi =[ 
-//         ['Početna', 'index.html'],
-//         ['Epizode', 'epizode.html'],
-//         ['O Autoru','onama.html'],
-//         ['Gosti', '#'],
-//         ['Kontakt', 'kontakt.html']
-//     ];
-//     for(var i = 0; i < linkovi.length; i++){
-//         var str = "" + linkovi[i];
-//         str = str.split(',');
-//         html += `<div id="burger-meni">
-//                     <ul  class="nav-links">
-//                         <li><a href="${linkovi[1]}">${linkovi[0]}</a></li>
-//                     </ul>
-//                 </div>`
-//         document.getElementById('burger-meni').innerHTML;
-//     }
-// }
-// navL();
+var html = "";
+function navL(){
+    var linkovi =[ 
+        ['Početna', 'index.html'],
+        ['Epizode', 'epizode.html'],
+        ['O Autoru','autor.html'],
+        ['Gosti', '#'],
+        ['Recenzija', 'recenzija.html'],
+        ['Kontakt', 'kontakt.html']
+    ];
+    for(var i = 0; i < linkovi.length; i++){
+        html += `
+            <li><a href="${linkovi[i][1]}">${linkovi[i][0]}</a></li>
+        `
+    }
+    document.getElementById('navLinks').innerHTML = html;
+}
+navL();
 
 
 
@@ -378,7 +375,7 @@ function prijavise(){
     }
     else
     {
-        document.getElementById("poruka-info").innerText = "Jedno ili više polja imaju grešku. Molimo Vas proverite i pokušajte ponovo.";
+        document.getElementById("poruka-info").innerHTML = "Jedno ili više polja imaju grešku.<br/> Molimo Vas proverite i pokušajte ponovo.";
         document.getElementById("poruka-info").style.color = "red";
     }
 }

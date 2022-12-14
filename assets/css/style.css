@@ -188,7 +188,6 @@
 /* Facebook kartica */
 .f-card {
   background-color:white;
-  /*height:400px;*/
   width:502px;
   border: 1px solid #d0d1d5;
   border-radius:3px;
@@ -337,14 +336,10 @@
   padding-right:4px;
 }
 
-
-#scrool{
-    overflow-y: scroll;
-}
 /*Kraj Facebook kartica */
 
 
-#fader{
+/* #fader{
   position: relative;
 }
 
@@ -357,7 +352,7 @@
 #fader img{
   width: 210px;
   height: 200px;
-}
+} */
 
 /** footer **/
 .footer {
