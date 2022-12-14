@@ -49,8 +49,9 @@ $(document).ready(function(){
     //Ucitavanje epizoda
     $("#ucitaj").click(function(){
         var podcasti = {
-            name: ["Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 3 Recap", "Sezona 3 Recap", "Sezona 3 Recap"],
-            zvuk: ["audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm"],
+            name: ["Ispraćaj putovanja u leto", "Ispraćaj putovanja u leto", "Ispraćaj putovanja u leto", "Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 3 Recap", "Sezona 3 Recap", "Sezona 3 Recap"],
+            zvuk: ["audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm"],
+            slike: ["img/bodega.jpg","img/bodega.jpg","img/bodega.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
 
         }
         var html = "";
@@ -59,10 +60,10 @@ $(document).ready(function(){
             html += `<div class="podcast-container">
             <div class="box">
                 <div class="image">
-                    <img src="img/stance.jpg" alt="">
+                    <img src="${podcasti.slike[i]}" alt="">
                 </div>
                 <div class="podcast">
-                    <p class="card-text"><small class="text-muted">Stanica Podcast</small></p>
+                    <p class="card-text"><small class="text-muted">Play Podcast</small></p>
                     <h5 class="card-title"><b>${podcasti.name[i]}</b></h5>
                     <audio src="${podcasti.zvuk[i]}" controls></audio>
                     <div class="social" id="social-sredina">
@@ -83,45 +84,35 @@ $(document).ready(function(){
             // $("#ucitaj").fadeOut();
         }
     })
-
 });
 
-
-
-// Dinamicki ispis nav dela
-
-// $(document).ready(function(){
-//     $("#nav").this(function(){
-//         var navPodaci = {
-//             href: ["index.html", "epizode.html", "onama.html", "#", "#", "#", "kontakt.html"],
-//             naziv: ["Početna", "Epizode", "O nama", "Guest", "Store", "Reviews", "Kontakt"],
-//         }
-//         console.log(navPodaci);
-
-//         var html = "";
-//         for(var i = 0; i < navPodaci.length; i++){
-//             html += `
-//             <div class="logo">
-//                 <a href="index.html"><img src="img/play-podcast.png" alt="logo"></a>
-//             </div>
-//             <div id="burger-meni">
-//                 <ul  class="nav-links">
-//                     <li><a href="${navPodaci.href}">${navPodaci.naziv}</a></li>
-//                 </ul>
-//             </div>
-//             <div class="burger">
-//                 <div class="line1"></div>
-//                 <div class="line2"></div>
-//                 <div class="line3"></div>
-//             </div>`
-//         }
-//     })
-// })
+// var html = "";
+// function navL(){
+//     var linkovi =[ 
+//         ['Početna', 'index.html'],
+//         ['Epizode', 'epizode.html'],
+//         ['O Autoru','onama.html'],
+//         ['Gosti', '#'],
+//         ['Kontakt', 'kontakt.html']
+//     ];
+//     for(var i = 0; i < linkovi.length; i++){
+//         var str = "" + linkovi[i];
+//         str = str.split(',');
+//         html += `<div id="burger-meni">
+//                     <ul  class="nav-links">
+//                         <li><a href="${linkovi[1]}">${linkovi[0]}</a></li>
+//                     </ul>
+//                 </div>`
+//         document.getElementById('burger-meni').innerHTML;
+//     }
+// }
+// navL();
 
 
 
 
 
+//-------------------VALIDACIJE ZA FORME-------------
 // validacija kontakt strane
 function kontakt(){
     var ime = document.getElementById("tbIme").value;
@@ -187,23 +178,26 @@ function kontakt(){
     document.getElementById("ime_greska").innerHTML = ime_poruka;
     document.getElementById("email_greska").innerHTML = email_poruka;
     document.getElementById("poruka_greska").innerHTML = poruka_poruka;
+
+    if(ime_greska == true && email_greska == true && poruka_greska == true){
+        document.getElementById("poruka-info").innerText = "Poruka poslata uspešno.";
+        document.getElementById("poruka-info").style.color = "green";
+    }
+    else
+    {
+        document.getElementById("poruka-info").innerText = "Jedno ili više polja imaju grešku. Molimo Vas proverite i pokušajte ponovo.";
+        document.getElementById("poruka-info").style.color = "red";
+    }
 }
+
+
 
 
 
 
 // forma za recenziju
-
-var ocena = document.getElementById("ddl");
-ocena.innerHTML=`<option>Izaberi ocenu</option>`;
-for(var i=1; i<=5; i++){
-    ocena.innerHTML+=`<option>${i}</option>`;
-}
-
-
-
-
 function recenzija(){
+    
     var ocena = document.getElementById("ddl");
     var naslov = document.getElementById("tbNaslov").value;
     var poruka = document.getElementById("tbPoruka").value;
@@ -280,43 +274,111 @@ function recenzija(){
     document.getElementById("poruka_greska").innerHTML = poruka_poruka;
     document.getElementById("ime_greska").innerHTML = ime_poruka;
 
-
+    if(naslov_greska == true && poruka_greska == true && ime_greska == true){
+        document.getElementById("poruka-info").innerText = "Hvala što ste ostavili recenziju";
+        document.getElementById("poruka-info").style.color = "green";
+    }
+    else
+    {
+        document.getElementById("poruka-info").innerText = "Jedno ili više polja imaju grešku. Molimo Vas proverite i pokušajte ponovo.";
+        document.getElementById("poruka-info").style.color = "red";
+    }
 }
 
 
-// Tajmer za index deo
 
 
-// function timer (){
-//     const second = 1000,
-//     minute = second * 60,
-//     hour = minute * 60,
-//     day = hour * 24;
-//     let time = "December 31, 2022 20:32:00";
-//     let countDown = new Date(time).getTime(),
-//     x = setInterval(function () {
-  
-//         let now = new Date().getTime(),
-//             distance = countDown - now;
-  
-//             document.getElementById('days').innerText = Math.floor(distance / (day)) + ' days',
-//             document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)) + ' hours',
-//             document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)) + ' minutes',
-//             document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second) + ' seconds';
-  
-//         if (distance <= 0) {
-  
-//             document.getElementById('days').innerText = ('0 days');
-//             document.getElementById('hours').innerText = ('0 hours');
-//             document.getElementById('minutes').innerText = ('0 minutes');
-//             document.getElementById('seconds').innerText = ('0 seconds');
-  
-            
-//             document.getElementById("divTimerExpired").style.display = "block";
-  
-//         }
-  
-//     }, second)
-//   }
-  
-//   timer();
+
+
+
+
+
+// dinamicki ispis ddl na strani recenzija
+var lista = document.getElementById("lista");
+var nizL = ["5 zvezdica","4 zvezdice","3 zvezdice","2 zvezdice","1 zvezdica"];
+for(var list of nizL){
+    lista.innerHTML += `<option>${list}</option>`;
+}
+
+
+// validacija prijave 
+
+function prijavise(){
+    var email = document.getElementById('email').value;
+    var lozinka = document.getElementById('lozinka').value;
+
+    var email_poruka = "";
+    var lozinka_poruka = "";
+
+    var email_greska = false;
+    var lozinka_greska = false;
+
+    if(email == ""){
+        email_poruka = "Polje za email mora biti popunjeno.";
+    }
+    else{
+        var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if(regex.test(email) == false){
+            email_poruka = "Neispravan email format. Kako: primer@gmail.com";
+        }
+        else{
+            email_poruka = "";
+            email_greska = true;
+        }
+    }
+
+    if(lozinka == "")
+    {
+        lozinka_poruka = "Lozinka je obavezana!";
+    }
+    else
+    {
+        if(lozinka.length <= 4)
+        {
+            lozinka_poruka = "Password mora imati najmanje 5 karaktera!";
+        }
+        else
+        {
+            var numbers = [1,2,3,4,5,6,7,8,9];
+            var counter_numbers = 0;
+
+            for(var i=0; i<numbers.length; i++)
+            {
+                var number = lozinka.search(numbers[i]);
+                
+                if(number == -1)
+                {
+                    counter_numbers += 1;
+                }
+                else
+                {
+                    counter_numbers -= 1;
+                }
+
+                if(counter_numbers == 9)
+                {
+                    lozinka_poruka = "Password mora sadržati makar jedan broj bez nule!";
+                }
+                else
+                {
+                    lozinka_poruka = "";
+                    lozinka_greska = true;
+                }
+            }            
+        }
+    }
+
+    document.getElementById("email_greska").innerHTML = email_poruka;
+    document.getElementById("lozinka_greska").innerHTML = lozinka_poruka;
+
+    if(email_greska == true && lozinka_greska == true){
+        document.getElementById("poruka-info").innerText = "Uspesno ste se prijavili";
+        document.getElementById("poruka-info").style.color = "green";
+    }
+    else
+    {
+        document.getElementById("poruka-info").innerText = "Jedno ili više polja imaju grešku. Molimo Vas proverite i pokušajte ponovo.";
+        document.getElementById("poruka-info").style.color = "red";
+    }
+}
