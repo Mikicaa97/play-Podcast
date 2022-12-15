@@ -38,7 +38,7 @@ navSlide();
 var indexPrikaza = 3;
 $(document).ready(function(){
 
-
+    
     // var kartice = {
     //     slika: ["img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
     //     naslov: ["Sezona 3 Recap", "Sezona 2 Legende 22'", "Sezona 1 StartUp"],
@@ -63,18 +63,7 @@ $(document).ready(function(){
     // }
     // $("left").html(tag);
 
-
-
-
-    // $('#fader').hover(
-    //     function(){
-    //         $(this).find('img:eq(1)').stop(true,true).fadeIn();
-    //     },
-    //     function(){
-    //         $(this).find('img:eq(1)').stop(true,true).fadeOut();
-    //     }
-    // )
-
+    slideShow();
     navL(); // Funkcija za ispis menia
 
     //Ucitavanje epizoda
@@ -114,8 +103,17 @@ $(document).ready(function(){
             $("#ucitaj-sve").html(html);
             // $("#ucitaj").fadeOut();
         }
-    })
 
+    })
+    function slideShow() {
+        var current = $('#photos .show');
+        var next = current.next().length ? current.next() : current.parent().children(':first');
+        
+        current.hide().removeClass('show');
+        next.fadeIn().addClass('show');
+        
+        setTimeout(slideShow, 2000);
+      }
 
     //Pozicioniranje slajdera
     if(window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] == "index.html"){
@@ -156,7 +154,6 @@ function navL(){
         ['Početna', 'index.html'],
         ['Epizode', 'epizode.html'],
         ['O Autoru','autor.html'],
-        ['Gosti', '#'],
         ['Recenzija', 'recenzija.html'],
         ['Kontakt', 'kontakt.html']
     ];
@@ -194,7 +191,7 @@ function kontakt(){
     }
     else{
         console.log("Opet Usao");
-        var regex = /^[a-zA-Z ]*$/;
+        var regex = /^^[A-Z][a-z]{2,19}$/;
 
         if(regex.test(ime) == false){
             ime_poruka = "Samo su slova i razmaci dozvoljeni!";
@@ -369,10 +366,13 @@ console.log("proslo")
 function prijavise(){
     var email = document.getElementById('email').value;
     var lozinka = document.getElementById('lozinka').value;
+    var cekiranje = document.getElementById('cekiran').value;
 
     var email_poruka = "";
     var lozinka_poruka = "";
+    var cekiran_poruka = "";
 
+    var cekiran_greska = false;
     var email_greska = false;
     var lozinka_greska = false;
 
@@ -432,8 +432,20 @@ function prijavise(){
         }
     }
 
+    if(cekiranje == "?????????????"){
+        console.log("Usao")
+        cekiran_poruka = "Nesto";
+        cekiran_greska = false;
+    }
+    else{
+        console.log("nije")
+        cekiran_poruka = "Niste prihvatili pravila korišćenja.";
+        cekiran_greska = true;
+    }
+
     document.getElementById("email_greska").innerHTML = email_poruka;
     document.getElementById("lozinka_greska").innerHTML = lozinka_poruka;
+    document.getElementById("cekiran_greska").innerHTML = cekiran_poruka;
 
     if(email_greska == true && lozinka_greska == true){
         document.getElementById("poruka-info").innerText = "Uspesno ste se prijavili";

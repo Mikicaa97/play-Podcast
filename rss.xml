@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <item>
+        <title>Play Podcast | Početna</title>
+        <link>https://mikicaa97.github.io/play-Podcast/index.html</link>
+        <description>podcast , automobili, cars, legende, prica</description>
+    </item>
+    <item>
+        <title>Play Podcast | Epizode</title>
+        <link>https://mikicaa97.github.io/play-Podcast/epizode.html</link>
+        <description>Sve sezone Play Podcast-a</description>
+    </item>
+    <item>
+        <title>Play Podcast | O nama</title>
+        <link>https://mikicaa97.github.io/play-Podcast/onama.html</link>
+        <description>Student Visoke ICT škole za informacione i komunikacione tehnologije</description>
+  </item>
+    <item>
+        <title>Play Podcast | Recenzija</title>
+        <link>https://mikicaa97.github.io/play-Podcast/recenzija.html</link>
+        <description>Ostavite recenziju za Play Podcast</description>
+  </item>
+  <item>
+        <title>Play Podcast | Kontakt</title>
+        <link>https://mikicaa97.github.io/play-Podcast/kontakt.html</link>
+        <description>Popuni formular ispod i mi ćemo Vam se javiti.</description>
+  </item>
+</channel>
+</rss>

@@ -5,9 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="description" content="">
+        <meta name="description" content="*PAŽNJA PRATIOCI* U ovoj epizodi Play 
+        podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele 
+        svoje omiljene trenutke, dogadjaje i dotiču se podrške o...">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="">
+        <meta name="keywords" content="odcast, play podcast, play, legende, 
+        StartUp, recap, Recap, poznate, licnosti, sezona, sezone, epizode">
         <meta name="author" content="Mihailo Vlajkovic">
         
         <meta property="og:title" content="Play Podcast">
@@ -20,7 +23,6 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-        <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link rel="icon" href="img/stance.jpg" type="image/x-icon">
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
@@ -40,7 +42,7 @@
                 <div class="line3"></div>
             </div>
         </nav>
-        <div class="container-fluid pt-5"  id="all">
+        <div class="container-fluid pt-5 py-5"  id="all">
             <div class="row px-xl-5">
                 <div class="card mb-3" id="all">
                     <div class="row g-0">
@@ -63,7 +65,7 @@
         </div>
         <!----Kraj hedera-->
 
-        
+        <!--Slajder-->
         <div id="all" class="py-5">
             <div class="container relative d-flex" id="slide">
                 <div class="card-body">
@@ -108,26 +110,13 @@
                             <h5 class="card-title"><b>Sezona 3 Recap</b></h5>
                             <p class="card-text"><small class="text-muted">Sezona 2 | Epizoda 2</small></p>
                         </div>
-                        <!--<div class="col-12 col-lg-6">
-                            <a href="poslednja-sezona.html">
-                                <img src="img/stance.jpg" class="img-fluid" alt="slika" />
-                            </a>
-                            <h5 class="card-title"><b>Sezona 3 Recap</b></h5>
-                            <p class="card-text"><small class="text-muted">Sezona 2 | Epizoda 2</small></p>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <a href="poslednja-sezona.html">
-                                <img src="img/stance.jpg" class="img-fluid" alt="slika" />
-                            </a>
-                            <h5 class="card-title"><b>Sezona 3 Recap</b></h5>
-                            <p class="card-text"><small class="text-muted">Sezona 2 | Epizoda 2</small></p>
-                        </div> -->
-                    
                 </div>
                 
                 <i class="fas fa-arrow-right strelica col-1" id="desna-strelica"></i>
             </div>
         </div>
+        <!---Kraj slajder-->
+
 
 
         <div class="container-fluid pt-5" id="all">
@@ -137,8 +126,11 @@
                         <h5 class="card-title my-3">Nedavne epizode</h5>
                         <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
-                              <div class="col-md-4">
-                                <img id="glenda" src="img/stance.jpg" class="img-fluid rounded-start" alt="slika">
+                              <div class="col-md-4" id="photos">
+                                <a href="poslednja-sezona.html">
+                                    <img id="glenda" src="img/stance.jpg" class="img-fluid rounded-start show" alt="slika">
+                                    <img src="img/play.png" class="img-fluid rounded-start" alt="slika">
+                                </a>
                               </div>
                               <div class="col-md-8">
                                 <div class="card-body">
@@ -205,6 +197,10 @@
                                     <label for="tbPassword">Lozinka</label>
                                     <input type="password" id="lozinka" class="form-control">
                                     <span style="color: red;" id="lozinka_greska"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" id="cekiran"> Prihvatam pravila korišćenja.
+                                    <span style="color: red;" id="cekiran_greska"></span>
                                 </div>
                                 <p class="card-text"><small class="text-muted">Prijavljivanjem prihvatate da primate e-poštu od Play podcasta.</small></p>
                                 <button type="button" class="btn btn-success btn-lg" id="dugme1" onclick="prijavise();">Zaprati nas</button>
@@ -291,6 +287,7 @@
                                             <li><img src="img/3.png" alt="Strelica 4"> <a href="DOKUMENTACIJA.pdf">Dokumentacija</a> </li>
                                         </ul>
                                     </div>
+                                    
                                 </div>
 
                                 <div class="col-lg-3 col-md-6 col-sm-6 ">
@@ -308,6 +305,12 @@
                                                 <a href="mailto:vlajkovic.1997@gmail.com" class="tm-contact-link">
                                                     <i class="fa fa-envelope tm-contact-icon"></i>vlajkovic.1997@gmail.com
                                                 </a>
+                                                <li>
+                                                    <a href="sitemap.xml" target="_blank"><i class="fas fa-sitemap"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="rss.xml" target="_blank"><i class="fas fa-rss"></i></a>
+                                                </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -327,6 +330,7 @@
                 </div>
             </div>
         </footer>
+
         <script src="assets/js/main.js"></script>
         <script src="https://kit.fontawesome.com/a089cf5bed.js" crossorigin="anonymous"></script>
     </body>
