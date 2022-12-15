@@ -37,6 +37,35 @@ navSlide();
 
 var indexPrikaza = 3;
 $(document).ready(function(){
+
+
+    // var kartice = {
+    //     slika: ["img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
+    //     naslov: ["Sezona 3 Recap", "Sezona 2 Legende 22'", "Sezona 1 StartUp"],
+    //     pTag: ["*PAŽNJA PRATIOCI* U ovoj epizodi Play podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele svoje omiljene trenutke, dogadjaje i dotiču se podrške o...", "U ovoj epizodi Stance Bodege, službenici Antonio (Antonio Soto) i Đo (Đovani Gonzales) okupljaju se za Legende...", "*PAŽNJA DRUGARI* U ovoj epizodi; Službenici (Antonio i Gio) pozdravljaju neka poznata lica u automobilskoj zajednici ovde u Masačusetsu, Tonija Toresa sa Summer Send Off Car Shov-a i Džejmsa Kelija iz Street Trendz Metala…", "*PAŽNJA DRUGARI!* Dobrodošli na još jednu sesiju povlačenja sa nikim drugim do Play Osnivačima. Play Osnivačima je porodica ljudi koja ne pruža ništa osim kvalitetnih Play vozila, odeće i dobrog VAJBA. G…"],
+    // }
+    // var tag = "";
+    // for(var j = 0; j < kartice.length; j++){
+    //     tag += `<div class="card mb-3" style="max-width: 640px;">
+    //     <div class="row g-0">
+    //       <div class="col-md-4">
+    //         <img src="${kartice.slika[j]}" class="img-fluid rounded-start" alt="kola">
+    //       </div>
+    //       <div class="col-md-8">
+    //         <div class="card-body">
+    //           <h5 class="card-title">${kartice.naslov[j]}</h5>
+    //           <p class="card-text">${kartice.pTag[j]}</p>
+    //           <p class="card-text"><small class="text-muted">Gosti: Toni Tores, James Kelly</small></p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>`
+    // }
+    // $("left").html(tag);
+
+
+
+
     // $('#fader').hover(
     //     function(){
     //         $(this).find('img:eq(1)').stop(true,true).fadeIn();
@@ -45,6 +74,8 @@ $(document).ready(function(){
     //         $(this).find('img:eq(1)').stop(true,true).fadeOut();
     //     }
     // )
+
+    navL(); // Funkcija za ispis menia
 
     //Ucitavanje epizoda
     $("#ucitaj").click(function(){
@@ -84,10 +115,43 @@ $(document).ready(function(){
             // $("#ucitaj").fadeOut();
         }
     })
+
+
+    //Pozicioniranje slajdera
+    if(window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] == "index.html"){
+    
+    var width = document.getElementById("uzorak-sirine").offsetWidth;
+    document.getElementById("slider-container").scrollLeft = width * 2 - 0.5;
+    $("#desna-strelica").click(PomerajSlajderaDesno)
+    $("#leva-strelica").click( PomerajSlajderaLevo)
+
+   
+    }
+
 });
 
-var html = "";
+//funckije za pomeraj slajdera
+
+function PomerajSlajderaDesno()
+{
+    
+    var width = document.getElementById("uzorak-sirine").offsetWidth;
+    var destination = document.getElementById("slider-container").scrollLeft + width;
+
+    $("#slider-container").animate({scrollLeft: destination},"slow");
+    
+}
+
+function PomerajSlajderaLevo(){
+    var width = document.getElementById("uzorak-sirine").offsetWidth;
+    var destination = document.getElementById("slider-container").scrollLeft - width;
+
+    $("#slider-container").animate({scrollLeft: destination},"slow");
+}
+
+
 function navL(){
+    var html = "";
     var linkovi =[ 
         ['Početna', 'index.html'],
         ['Epizode', 'epizode.html'],
@@ -103,8 +167,6 @@ function navL(){
     }
     document.getElementById('navLinks').innerHTML = html;
 }
-navL();
-
 
 
 
@@ -194,31 +256,29 @@ function kontakt(){
 
 // forma za recenziju
 function recenzija(){
-    
-    var ocena = document.getElementById("ddl");
+    var ocena = document.getElementById("lista").value;
     var naslov = document.getElementById("tbNaslov").value;
     var poruka = document.getElementById("tbPoruka").value;
     var ime = document.getElementById("tbIme").value;
-    
     
     var ocena_poruka = "";
     var naslov_poruka = "";
     var poruka_poruka = "";
     var ime_poruka = "";
 
-    var ocena_greska = "";
-    var naslov_greska = "";
-    var poruka_greska = "";
-    var ime_greska = "";
+    var ocena_greska = false;
+    var naslov_greska = false;
+    var poruka_greska = false;
+    var ime_greska = false;
 
 
-    if(ocena == "0"){
-        ocena_poruka = "Morate izabrati ponudjenu vrednost";
+    if(ocena == "Izaberite"){
+        ocena_poruka = "Niste uneli ocenu.";
     }
     else{
-        ocena_poruka = "";
-        ocena_greska = true;
+        ocena_greska = "";
     }
+
 
     if(naslov == ""){
         naslov_poruka = "Naslov mora biti popunjen.";
@@ -266,7 +326,7 @@ function recenzija(){
         }
     }
 
-    // document.getElementById("ocena_greska").innerHTML = ocena_poruka;
+    document.getElementById("ocena_greska").innerHTML = ocena_poruka;
     document.getElementById("naslov_greska").innerHTML = naslov_poruka;
     document.getElementById("poruka_greska").innerHTML = poruka_poruka;
     document.getElementById("ime_greska").innerHTML = ime_poruka;
@@ -291,10 +351,16 @@ function recenzija(){
 
 
 // dinamicki ispis ddl na strani recenzija
+if(window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] == "recenzija.html"){
 var lista = document.getElementById("lista");
+lista.innerHTML += `<option>Izaberite</option>`;
 var nizL = ["5 zvezdica","4 zvezdice","3 zvezdice","2 zvezdice","1 zvezdica"];
 for(var list of nizL){
     lista.innerHTML += `<option>${list}</option>`;
+}
+
+console.log("proslo")
+
 }
 
 
@@ -379,3 +445,6 @@ function prijavise(){
         document.getElementById("poruka-info").style.color = "red";
     }
 }
+
+
+

@@ -64,6 +64,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  #slide{
+    display: block !important;
+  }
+  .uzorak h5{
+    display: none !important;
+  }
+
   .nav-links > li{
     margin-left: 0px !important;
   }
@@ -127,24 +134,6 @@
 #all p{
     color: rgb(100, 100, 100);
 }
-
-
-
-/* #allPrvideo{
-  width: 100%;
-  background-color: rgb(231, 231, 231);
-  border: none;
-  display: flex;
-  justify-content: space-around;
-}
-#allPrvideo p{
-  color: rgb(100, 100, 100);
-}
-#allPrvideo h2{
-  color: rgb(100, 100, 100);
-} */
-
-
 
 #white{
     background-color: rgb(255, 255, 255);
@@ -339,20 +328,30 @@
 /*Kraj Facebook kartica */
 
 
-/* #fader{
+/* Slider deo */
+#slide{
+  background-color: #e7e7e7;
+}
+#slider-container{
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  overflow: hidden;
+  overflow-y: hidden;      
+  white-space: nowrap;
+}
+
+.strelica{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 25px;
   position: relative;
+  top:-49%;
+ 
 }
 
-#fader #to{
-  display: none;
-  position: absolute;
-  left: 0;
-}
 
-#fader img{
-  width: 210px;
-  height: 200px;
-} */
 
 /** footer **/
 .footer {
