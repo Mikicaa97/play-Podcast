@@ -43,6 +43,7 @@ $(document).ready(function(){
     //     slika: ["img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
     //     naslov: ["Sezona 3 Recap", "Sezona 2 Legende 22'", "Sezona 1 StartUp"],
     //     pTag: ["*PAŽNJA PRATIOCI* U ovoj epizodi Play podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele svoje omiljene trenutke, dogadjaje i dotiču se podrške o...", "U ovoj epizodi Stance Bodege, službenici Antonio (Antonio Soto) i Đo (Đovani Gonzales) okupljaju se za Legende...", "*PAŽNJA DRUGARI* U ovoj epizodi; Službenici (Antonio i Gio) pozdravljaju neka poznata lica u automobilskoj zajednici ovde u Masačusetsu, Tonija Toresa sa Summer Send Off Car Shov-a i Džejmsa Kelija iz Street Trendz Metala…", "*PAŽNJA DRUGARI!* Dobrodošli na još jednu sesiju povlačenja sa nikim drugim do Play Osnivačima. Play Osnivačima je porodica ljudi koja ne pruža ništa osim kvalitetnih Play vozila, odeće i dobrog VAJBA. G…"],
+    //     maliP: ["Dec. 13, 2022", "Sept. 13, 2022", "Gosti: Toni Tores, James Kelly", "Gosti: Play Podcast Osnivači"],
     // }
     // var tag = "";
     // for(var j = 0; j < kartice.length; j++){
@@ -55,22 +56,22 @@ $(document).ready(function(){
     //         <div class="card-body">
     //           <h5 class="card-title">${kartice.naslov[j]}</h5>
     //           <p class="card-text">${kartice.pTag[j]}</p>
-    //           <p class="card-text"><small class="text-muted">Gosti: Toni Tores, James Kelly</small></p>
+    //           <p class="card-text"><small class="text-muted">${kartice.maliP[j]}</small></p>
     //         </div>
     //       </div>
     //     </div>
     //   </div>`
     // }
-    // $("left").html(tag);
+    // $("#left").html(tag);
 
-    slideShow();
+    slideShow(); //funckcija za 
     navL(); // Funkcija za ispis menia
 
     //Ucitavanje epizoda
     $("#ucitaj").click(function(){
         var podcasti = {
             name: ["Ispraćaj putovanja u leto", "Ispraćaj putovanja u leto", "Ispraćaj putovanja u leto", "Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 2 Legende 22'", "Sezona 3 Recap", "Sezona 3 Recap", "Sezona 3 Recap"],
-            zvuk: ["audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm","audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm", "audio/Chase Atlantic - _Church_ (Official Music Video).webm"],
+            zvuk: ["audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm","audio/Aca Petrolheads progovorio o Zokijevom odlasku iz PH u emisiju SAT!.webm","audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm", "audio/Aca Petrolheads o Auto Analizi, Neovlascenom serviseru i SAT emisiji.webm"],
             slike: ["img/bodega.jpg","img/bodega.jpg","img/bodega.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
 
         }
@@ -105,6 +106,8 @@ $(document).ready(function(){
         }
 
     })
+
+    //deo za menjanje slike na delu kartica
     function slideShow() {
         var current = $('#photos .show');
         var next = current.next().length ? current.next() : current.parent().children(':first');
@@ -148,6 +151,7 @@ function PomerajSlajderaLevo(){
 }
 
 
+// dinamicko ucitavanje nav
 function navL(){
     var html = "";
     var linkovi =[ 
