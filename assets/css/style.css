@@ -4,8 +4,19 @@
     box-sizing: border-box;
 }
 
+body{
+    
+  overflow-x: hidden;
+}
+
+html{
+
+    overflow-x: hidden;
+}
+
 #nav{
-    display: flex;
+    d
+    isplay: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
