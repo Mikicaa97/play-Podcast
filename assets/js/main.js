@@ -39,30 +39,33 @@ var indexPrikaza = 3;
 $(document).ready(function(){
 
     
-    // var kartice = {
-    //     slika: ["img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg", "img/stance.jpg"],
-    //     naslov: ["Sezona 3 Recap", "Sezona 2 Legende 22'", "Sezona 1 StartUp"],
-    //     pTag: ["*PAŽNJA PRATIOCI* U ovoj epizodi Play podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele svoje omiljene trenutke, dogadjaje i dotiču se podrške o...", "U ovoj epizodi Stance Bodege, službenici Antonio (Antonio Soto) i Đo (Đovani Gonzales) okupljaju se za Legende...", "*PAŽNJA DRUGARI* U ovoj epizodi; Službenici (Antonio i Gio) pozdravljaju neka poznata lica u automobilskoj zajednici ovde u Masačusetsu, Tonija Toresa sa Summer Send Off Car Shov-a i Džejmsa Kelija iz Street Trendz Metala…", "*PAŽNJA DRUGARI!* Dobrodošli na još jednu sesiju povlačenja sa nikim drugim do Play Osnivačima. Play Osnivačima je porodica ljudi koja ne pruža ništa osim kvalitetnih Play vozila, odeće i dobrog VAJBA. G…"],
-    //     maliP: ["Dec. 13, 2022", "Sept. 13, 2022", "Gosti: Toni Tores, James Kelly", "Gosti: Play Podcast Osnivači"],
-    // }
-    // var tag = "";
-    // for(var j = 0; j < kartice.length; j++){
-    //     tag += `<div class="card mb-3" style="max-width: 640px;">
-    //     <div class="row g-0">
-    //       <div class="col-md-4">
-    //         <img src="${kartice.slika[j]}" class="img-fluid rounded-start" alt="kola">
-    //       </div>
-    //       <div class="col-md-8">
-    //         <div class="card-body">
-    //           <h5 class="card-title">${kartice.naslov[j]}</h5>
-    //           <p class="card-text">${kartice.pTag[j]}</p>
-    //           <p class="card-text"><small class="text-muted">${kartice.maliP[j]}</small></p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>`
-    // }
-    // $("#left").html(tag);
+    var kartice = {
+        slika: ["img/stance.jpg", "img/stance.jpg", "img/bodega.jpg", "img/stance.jpg"],
+        naslov: ["Sezona 3 Recap", "Sezona 2 Legende 22'", "Ispraćaj putovanja u leto", "Sezona 1 StartUp"],
+        pTag: ["*PAŽNJA PRATIOCI* U ovoj epizodi Play podcasta službenici Antonio i Djovani Gonzales rezimiraju sezonu 2. Zajedno dele svoje omiljene trenutke, dogadjaje i dotiču se podrške o...", "U ovoj epizodi Stance Bodege, službenici Antonio (Antonio Soto) i Đo (Đovani Gonzales) okupljaju se za Legende...", "*PAŽNJA DRUGARI* U ovoj epizodi; Službenici (Antonio i Gio) pozdravljaju neka poznata lica u automobilskoj zajednici ovde u Masačusetsu, Tonija Toresa sa Summer Send Off Car Shov-a i Džejmsa Kelija iz Street Trendz Metala…", "*PAŽNJA DRUGARI!* Dobrodošli na još jednu sesiju povlačenja sa nikim drugim do Play Osnivačima. Play Osnivačima je porodica ljudi koja ne pruža ništa osim kvalitetnih Play vozila, odeće i dobrog VAJBA. G…"],
+        maliP: ["Dec. 13, 2022", "Sept. 13, 2022", "Gosti: Toni Tores, James Kelly", "Gosti: Play Podcast Osnivači"],
+    }
+    var tag = "";
+    for(var j = 0; j < kartice.slika.length; j++){
+        tag += `
+        <div class="card mb-3" style="max-width: 640px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <a href="poslednja-sezona.html">
+                <img src="${kartice.slika[j]}" class="img-fluid rounded-start" alt="kola">
+            </a>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${kartice.naslov[j]}</h5>
+              <p class="card-text">${kartice.pTag[j]}</p>
+              <p class="card-text"><small class="text-muted">${kartice.maliP[j]}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>`
+    }
+    $("#left").html(tag);
 
     slideShow(); //funckcija za 
     navL(); // Funkcija za ispis menia
